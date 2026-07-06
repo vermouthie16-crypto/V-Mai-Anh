@@ -189,7 +189,7 @@ ul {
 .hero-avatar {
     flex-shrink: 0;
 }
-.image-frame {
+.avatar-frame {
     width: 280px;
     height: 280px;
     overflow: hidden;    /* chặn phần ảnh thừa tràn ra ngoài border-radius */
@@ -198,13 +198,13 @@ ul {
     border: 6px solid #ffffff;
     transition: transform 0.4s ease;
 }
-.image-frame img {
+.avatar-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-.image-frame:hover {
+.avatar-frame:hover {
     transform: scale(1.02);
 }
 
