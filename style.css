@@ -440,3 +440,15 @@ footer {
     font-family: 'Dancing Script', cursive !important;
     font-size: 26px;
 }
+/* Đoạn code dán ở cuối cùng file style.css để sửa triệt để lỗi tràn khung */
+.avatar-frame, [class*="avatar-frame"] {
+    width: 280px !important;
+    height: 280px !important;
+    overflow: hidden !important;
+}
+
+.avatar-frame img, [class*="avatar-frame"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
