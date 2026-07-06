@@ -190,19 +190,25 @@ ul {
     flex-shrink: 0;
 }
 .avatar-frame {
-    width: 280px;
-    height: 280px;
-    overflow: hidden;    /* chặn phần ảnh thừa tràn ra ngoài border-radius */
-    border-radius: 32px;
+    flex-shrink: 0 !important; /* Ngăn chặn cấu trúc Flexbox bóp méo hoặc kéo giãn khung */
+    width: 280px !important;
+    height: 280px !important;
+    max-width: 280px !important;
+    max-height: 280px !important;
+    overflow: hidden !important; /* Bắt buộc cắt bỏ mọi phần ảnh thừa vượt quá 280px */
+    border-radius: 32px !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     border: 6px solid #ffffff;
+    position: relative !important;
     transition: transform 0.4s ease;
 }
-.avatar-frame img { /* Đổi từ .image-frame img thành .avatar-frame img */
-    width: 100% !important;  /* Ép chiều rộng ảnh bằng 100% của khung (280px) */
-    height: 100% !important; /* Ép chiều cao ảnh bằng 100% của khung (280px) */
-    object-fit: cover !important; /* Giữ nguyên tỷ lệ ảnh, không bị méo */
-    display: block;
+.avatar-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important; /* Giữ tỷ lệ ảnh vuông góc, tự động cắt viền */
+    display: block !important;
 }
 .avatar-frame:hover {
     transform: scale(1.02);
@@ -439,16 +445,4 @@ footer {
 .logo {
     font-family: 'Dancing Script', cursive !important;
     font-size: 26px;
-}
-/* Đoạn code dán ở cuối cùng file style.css để sửa triệt để lỗi tràn khung */
-.avatar-frame, [class*="avatar-frame"] {
-    width: 280px !important;
-    height: 280px !important;
-    overflow: hidden !important;
-}
-
-.avatar-frame img, [class*="avatar-frame"] img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
 }
