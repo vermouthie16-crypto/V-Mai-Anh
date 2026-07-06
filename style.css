@@ -184,23 +184,35 @@ ul {
     font-size: 13px;
     color: var(--text-muted);
 }
-
 /* Khung ảnh Avatar bo tròn mềm */
 .hero-avatar {
     flex-shrink: 0;
 }
 .avatar-frame {
-    flex-shrink: 0 !important; /* Ngăn chặn cấu trúc Flexbox bóp méo hoặc kéo giãn khung */
+    flex-shrink: 0 !important;
     width: 280px !important;
     height: 280px !important;
     max-width: 280px !important;
     max-height: 280px !important;
-    overflow: hidden !important; /* Bắt buộc cắt bỏ mọi phần ảnh thừa vượt quá 280px */
+    
+    /* BỘ BA THUỘC TÍNH BẮT BUỘC ĐỂ ÉP ẢNH PHẢI BO THEO KHUNG */
+    overflow: hidden !important;
     border-radius: 32px !important;
+    transform: translateZ(0) !important; /* Mẹo ép trình duyệt Safari/Chrome bật chế độ khử răng cưa và bo góc phần tử con */
+    
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     border: 6px solid #ffffff;
     position: relative !important;
     transition: transform 0.4s ease;
+}
+
+/* Thêm đoạn này để chắc chắn thẻ img bên trong cũng được thừa hưởng viền bo tròn */
+.avatar-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: inherit !important; /* Ép ảnh lấy đúng border-radius: 32px từ khung cha */
 }
 .avatar-frame img {
     width: 100% !important;
@@ -445,30 +457,4 @@ footer {
 .logo {
     font-family: 'Dancing Script', cursive !important;
     font-size: 26px;
-}
-.avatar-frame {
-    flex-shrink: 0 !important;
-    width: 280px !important;
-    height: 280px !important;
-    max-width: 280px !important;
-    max-height: 280px !important;
-    
-    /* BỘ BA THUỘC TÍNH BẮT BUỘC ĐỂ ÉP ẢNH PHẢI BO THEO KHUNG */
-    overflow: hidden !important;
-    border-radius: 32px !important;
-    transform: translateZ(0) !important; /* Mẹo ép trình duyệt Safari/Chrome bật chế độ khử răng cưa và bo góc phần tử con */
-    
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    border: 6px solid #ffffff;
-    position: relative !important;
-    transition: transform 0.4s ease;
-}
-
-/* Thêm đoạn này để chắc chắn thẻ img bên trong cũng được thừa hưởng viền bo tròn */
-.avatar-frame img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: inherit !important; /* Ép ảnh lấy đúng border-radius: 32px từ khung cha */
 }
