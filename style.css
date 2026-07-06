@@ -205,23 +205,6 @@ ul {
     position: relative !important;
     transition: transform 0.4s ease;
 }
-
-/* Thêm đoạn này để chắc chắn thẻ img bên trong cũng được thừa hưởng viền bo tròn */
-.avatar-frame img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: inherit !important; /* Ép ảnh lấy đúng border-radius: 32px từ khung cha */
-}
-.avatar-frame img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: cover !important; /* Giữ tỷ lệ ảnh vuông góc, tự động cắt viền */
-    display: block !important;
-}
 .avatar-frame:hover {
     transform: scale(1.02);
 }
