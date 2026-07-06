@@ -458,3 +458,25 @@ footer {
     font-family: 'Dancing Script', cursive !important;
     font-size: 26px;
 }
+/* ĐOẠN CODE SỬA TRIỆT ĐỂ LỖI KHÔNG BO GÓC ẢNH AVATAR */
+
+/* 1. Ép khung cha bắt buộc phải bo góc và cắt phần thừa */
+.avatar-frame, 
+div[class*="avatar-frame"] {
+    position: relative !important;
+    width: 280px !important;
+    height: 280px !important;
+    border-radius: 32px !important; /* Bo góc khung */
+    overflow: hidden !important;    /* Cắt góc nhọn của ảnh */
+    isolation: isolate !important;  /* Tạo một lớp hiển thị độc lập để ép trình duyệt phải tuân thủ overflow:hidden */
+}
+
+/* 2. Ép chính xác thẻ ảnh bên trong phải bo góc theo */
+.avatar-frame img, 
+div[class*="avatar-frame"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 32px !important; /* Bo góc trực tiếp lên ảnh để không phụ thuộc vào khung cha */
+}
